@@ -1,22 +1,18 @@
 import streamlit as st
 
-# Define age options within the desired range (35 to 200)
-age_options = range(35, 201)  # List of ages from 35 to 200
-age_options2 = range(0, 201)  # List of ages from 0 to 200
-
 # Session state variable to track button click
 if 'submitted' not in st.session_state:
   st.session_state['submitted'] = False
 
-st.title("Age Calculator")
+st.title("Find your Age")
 
 # User input fields
-age1 = st.selectbox("**Enter your father age**", age_options)
-age2 = st.selectbox("**Enter your mother age**", age_options)
-user_age = st.selectbox("**Enter your age**", age_options2)
+age1 = st.number_input("**Enter your father age**", step=1)
+age2 = st.number_input("**Enter your mother age**", step=1)
+user_age = st.number_input("**Enter your age**", step=0.5)
 
 # Submit button and progress bar
-submitted = st.button("**Calculate**", key="submit_button")
+submitted = st.button("**Find**", key="submit_button")
 if submitted:
   st.session_state['submitted'] = True
   with st.empty():
