@@ -1,7 +1,5 @@
 import streamlit as st
 
-st.title("WELCOME")
-
 # Define age options within the desired range (35 to 200)
 age_options = range(35, 201)  # List of ages from 35 to 200
 age_options2 = range(0, 201)  # List of ages from 0 to 200
